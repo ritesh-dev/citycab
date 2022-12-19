@@ -1,0 +1,1 @@
+export const color = {'primary': '#005df4'}
