@@ -3,7 +3,7 @@ import { Image, SafeAreaView, Text, TextInput, TouchableOpacity, View } from 're
 import { color } from '../assets/colors'
 import {AntDesign, MaterialIcons} from '@expo/vector-icons'
 
-export default function SignInScreen() {
+export default function SignInScreen({navigation}) {
   return (
     <SafeAreaView style={{flex: 1, justifyContent: 'center'}}>
         <View style={{backgroundColor: color.primary, flex: 1, alignItems: 'center'}}>
@@ -17,16 +17,16 @@ export default function SignInScreen() {
             <Text style={{fontSize: 20, fontWeight: '400', marginTop: 22, color: '#555'}}>Continue with Mobile</Text>
             <TextInput style={{marginTop: 15, backgroundColor: '#eee', padding: 20}} placeholder='Enter mobile number' />
             
-            <TouchableOpacity style={{marginTop: 20, backgroundColor: color.primary, padding: 20, borderRadius: 10}}>
+            <TouchableOpacity onPress={()=>{navigation.navigate('otp')}} style={{marginTop: 20, backgroundColor: color.primary, padding: 20, borderRadius: 10}}>
                 <Text style={{color: '#fff', fontSize: 18, fontWeight: '600', textAlign: 'center'}}>Continue</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={{marginTop: 20, backgroundColor: color.primary, padding: 15, borderRadius: 10, alignItems: 'center', justifyContent: 'center', flexDirection: 'row'}}>
+            <TouchableOpacity onPress={()=>{navigation.navigate('otp')}} style={{marginTop: 20, backgroundColor: color.primary, padding: 15, borderRadius: 10, alignItems: 'center', justifyContent: 'center', flexDirection: 'row'}}>
                 <AntDesign name="googleplus" size={24} color="#fff"/>
                 <Text style={{color: '#fff', fontSize: 18, fontWeight: '600', textAlign: 'center', marginLeft: 15}}>Log In with Google</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={{marginTop: 20, backgroundColor: color.primary, padding: 15, borderRadius: 10, alignItems: 'center', justifyContent: 'center', flexDirection: 'row'}}>
+            <TouchableOpacity onPress={()=>{navigation.navigate('otp')}} style={{marginTop: 20, backgroundColor: color.primary, padding: 15, borderRadius: 10, alignItems: 'center', justifyContent: 'center', flexDirection: 'row'}}>
                 <MaterialIcons name="facebook" size={24} color="#fff"/>
                 <Text style={{color: '#fff', fontSize: 18, fontWeight: '600', textAlign: 'center', marginLeft: 15}}>Connect with Facebook</Text>
             </TouchableOpacity>
